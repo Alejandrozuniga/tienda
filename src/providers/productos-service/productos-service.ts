@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Producto } from '../../model/producto';
+import { CustomStorage } from '../../utils/CustomStorage';
+
+
 
 /*
   Generated class for the ProductosServiceProvider provider.
@@ -30,11 +33,11 @@ export class ProductosServiceProvider {
     return this.productos;
   }
   guardarProductos(){
-    localStorage.setItem("Productos", ""+this.productos);
+    CustomStorage.set("Productos", ""+this.productos);
   }
 
   guardarTotalAPagar(){
-    localStorage.setItem("PrecioTotal",""+this.totalAPagar)
+    CustomStorage.set("PrecioTotal",""+this.totalAPagar)
   }
 
   quitarProducto(id:number){
